@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="SarkariAlert - Fastest Government Job Notifications for Northeast India & All India. Get instant alerts for SSC, Railway, UPSC, Banking, State PSC jobs.">
+    <meta name="keywords" content="sarkari job, government jobs, northeast jobs, nagaland jobs, assam jobs, manipur jobs, ssc, railway, upsc">
+    <title>SarkariAlert - Latest Sarkari Jobs 2025 | Northeast & All India</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="nav-wrapper">
+                <!-- Replace the .logo block with this -->
+<!-- Replace the .logo block with this -->
+<div class="logo">
+  <!-- Logo image: put your image file in assets/ (e.g. assets/logo.png) -->
+  <img src="assets/IMG_3117[1].JPG" alt="SarkariAlert logo" class="logo-img" />
+
+  <!-- Title + optional tagline — use semantic heading for SEO -->
+  <div class="logo-text">
+    <h1 class="site-title">SarkariAlert</h1>
+    <small class="site-tagline">Northeast & All India Govt. Jobs Alerts</small>
+  </div>
+</div>
+
+                <nav class="nav-menu">
+                    <a href="#home">Home</a>
+                    <a href="#northeast">Northeast Jobs</a>
+                    <a href="#all-india">All India</a>
+                    <a href="#exams">Popular Exams</a>
+                    <a href="#current-affairs">Current Affairs</a>
+                </nav>
+                <button class="mobile-menu-btn" id="mobileMenuBtn">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Get Verified Govt. Jobs</h1>
+                <p>Northeast India & All India Government Jobs | Daily Updates</p>
+                
+                <!-- Smart Search Bar -->
+                <div class="search-container">
+                    <div class="search-bar">
+                        <i class="fas fa-search"></i>
+                        <input type="text" id="searchInput" placeholder='"State Name" or "Job Title" or "Category"'>
+                        <button class="search-btn">Search</button>
+                    </div>
+                    <div class="search-suggestions" id="searchSuggestions"></div>
+                </div>
+
+                <!-- Interactive Filters -->
+                <div class="filters">
+                    <select class="filter-select" id="stateFilter">
+                        <option value="">All States</option>
+                        <option value="nagaland">Nagaland</option>
+                        <option value="assam">Assam</option>
+                        <option value="manipur">Manipur</option>
+                        <option value="meghalaya">Meghalaya</option>
+                        <option value="mizoram">Mizoram</option>
+                        <option value="tripura">Tripura</option>
+                        <option value="arunachal">Arunachal Pradesh</option>
+                        <option value="sikkim">Sikkim</option>
+                        <option value="all-india">All India</option>
+                    </select>
+
+                    <select class="filter-select" id="qualificationFilter">
+                        <option value="">Qualification</option>
+                        <option value="10th">10th Pass</option>
+                        <option value="12th">12th Pass</option>
+                        <option value="graduate">Graduate</option>
+                        <option value="postgraduate">Post Graduate</option>
+                        <option value="diploma">Diploma</option>
+                    </select>
+
+                    <select class="filter-select" id="categoryFilter">
+                        <option value="">Category</option>
+                        <option value="banking">Banking</option>
+                        <option value="railway">Railway</option>
+                        <option value="defense">Defense</option>
+                        <option value="teaching">Teaching</option>
+                        <option value="police">Police</option>
+                        <option value="psc">PSC</option>
+                        <option value="ssc">SSC</option>
+                    </select>
+
+                    <button class="filter-btn" id="applyFilters">Apply Filters</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="stats-section">
+        <div class="container">
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <i class="fas fa-briefcase"></i>
+                    <h3>5000+</h3>
+                    <p>Active Govt. Jobs</p>
+                </div>
+                <div class="stat-card">
+                    <i class="fas fa-users"></i>
+                    <h3>2L+</h3>
+                    <p>Happy Users</p>
+                </div>
+                <div class="stat-card">
+                    <i class="fas fa-bell"></i>
+                    <h3>Daily</h3>
+                    <p>Instant Alerts</p>
+                </div>
+                <div class="stat-card">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <h3>Northeast</h3>
+                    <p>Focused</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Alerts Section -->
+    <section class="featured-section" id="home">
+        <div class="container">
+            <div class="section-header">
+                <h2><i class="fas fa-fire"></i> Trending Jobs</h2>
+                <a href="#" class="view-all">View All <i class="fas fa-arrow-right"></i></a>
+            </div>
+            <div class="jobs-grid" id="featuredJobs">
+                <!-- Jobs will be loaded via JS -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Northeast Spotlight -->
+    <section class="northeast-section" id="northeast">
+        <div class="container">
+            <div class="section-header">
+                <h2><i class="fas fa-map-marked-alt"></i> Northeast Spotlight Jobs</h2>
+                <a href="#" class="view-all">View All <i class="fas fa-arrow-right"></i></a>
+            </div>
+            <div class="jobs-grid" id="northeastJobs">
+                <!-- Northeast jobs loaded via JS -->
+            </div>
+        </div>
+    </section>
+
+    <!-- All India Jobs -->
+    <section class="all-india-section" id="all-india">
+        <div class="container">
+            <div class="section-header">
+                <h2><i class="fas fa-globe-asia"></i> All India Jobs</h2>
+                <a href="#" class="view-all">View All <i class="fas fa-arrow-right"></i></a>
+            </div>
+            <div class="jobs-grid" id="allIndiaJobs">
+                <!-- All India jobs loaded via JS -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Closing Soon -->
+    <section class="closing-soon-section">
+        <div class="container">
+            <div class="section-header">
+                <h2><i class="fas fa-clock"></i> Closing Soon</h2>
+                <span class="urgency-badge">Apply Now!</span>
+            </div>
+            <div class="jobs-grid" id="closingSoonJobs">
+                <!-- Closing soon jobs loaded via JS -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Daily MCQs Section -->
+    <section class="mcq-section">
+        <div class="container">
+            <div class="section-header">
+                <h2><i class="fas fa-question-circle"></i> Daily MCQs - Practice Now</h2>
+                <span class="free-badge">5 Free Daily</span>
+            </div>
+            <div class="mcq-container" id="mcqContainer">
+                <!-- MCQs will be loaded via JS -->
+            </div>
+            <div class="mcq-cta">
+                <p>Get unlimited MCQs and practice tests in the app!</p>
+                <button class="download-btn" onclick="showAppModal()">
+                    <i class="fas fa-mobile-alt"></i> Download App for More
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Current Affairs -->
+    <section class="current-affairs-section" id="current-affairs">
+        <div class="container">
+            <div class="section-header">
+                <h2><i class="fas fa-newspaper"></i> Daily Current Affairs</h2>
+                <span class="date-badge">Today - Dec 06, 2025</span>
+            </div>
+            <div class="current-affairs-grid">
+                <div class="affair-card">
+                    <span class="affair-tag">National</span>
+                    <p>India becomes 3rd largest economy, surpassing Japan and Germany</p>
+                </div>
+                <div class="affair-card">
+                    <span class="affair-tag">Northeast</span>
+                    <p>Nagaland launches new digital governance initiative</p>
+                </div>
+                <div class="affair-card">
+                    <span class="affair-tag">Sports</span>
+                    <p>Indian cricket team wins World Championship series</p>
+                </div>
+                <div class="affair-card">
+                    <span class="affair-tag">Economy</span>
+                    <p>RBI announces new monetary policy changes</p>
+                </div>
+                <div class="affair-card">
+                    <span class="affair-tag">Defense</span>
+                    <p>Indian Navy commissions new aircraft carrier INS Vikrant</p>
+                </div>
+                <div class="affair-card">
+                    <span class="affair-tag">Northeast</span>
+                    <p>Assam government announces new employment scheme for youth</p>
+                </div>
+            </div>
+            <button class="download-btn" onclick="showAppModal()">
+                <i class="fas fa-mobile-alt"></i> Get Full Current Affairs in App
+            </button>
+        </div>
+    </section>
+
+    <!-- Popular Exams -->
+    <section class="popular-exams-section" id="exams">
+        <div class="container">
+            <div class="section-header">
+                <h2><i class="fas fa-graduation-cap"></i> Popular Exams</h2>
+            </div>
+            <div class="exams-grid">
+                <div class="exam-card">
+                    <i class="fas fa-landmark"></i>
+                    <h3>UPSC</h3>
+                    <p>Civil Services Exam</p>
+                </div>
+                <div class="exam-card">
+                    <i class="fas fa-train"></i>
+                    <h3>Railway</h3>
+                    <p>RRB Exams</p>
+                </div>
+                <div class="exam-card">
+                    <i class="fas fa-university"></i>
+                    <h3>SSC</h3>
+                    <p>Staff Selection Commission</p>
+                </div>
+                <div class="exam-card">
+                    <i class="fas fa-shield-alt"></i>
+                    <h3>Defense</h3>
+                    <p>Army, Navy, Air Force</p>
+                </div>
+                <div class="exam-card">
+                    <i class="fas fa-building"></i>
+                    <h3>Banking</h3>
+                    <p>IBPS, SBI, RBI</p>
+                </div>
+                <div class="exam-card">
+                    <i class="fas fa-chalkboard-teacher"></i>
+                    <h3>Teaching</h3>
+                    <p>TET, NET, SET</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- App Download CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <div class="cta-content">
+                <div class="cta-text">
+                    <h2>Join Northeast's Largest Job Community</h2>
+                    <p>Get instant notifications, full job details, syllabus, previous papers & more</p>
+                    <div class="cta-features">
+                        <span><i class="fas fa-check"></i> Instant Alerts</span>
+                        <span><i class="fas fa-check"></i> Complete Details</span>
+                        <span><i class="fas fa-check"></i> Daily MCQs</span>
+                        <span><i class="fas fa-check"></i> Exam Calendar</span>
+                    </div>
+                </div>
+                <div class="cta-buttons">
+                    <button class="download-btn primary" onclick="showAppModal()">
+                        <i class="fas fa-mobile-alt"></i> Download App Now
+                    </button>
+                    <button class="whatsapp-btn" onclick="joinWhatsApp()">
+                        <i class="fab fa-whatsapp"></i> Join WhatsApp Group
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h3>SarkariAlert</h3>
+                    <p>Your trusted partner for government job notifications across Northeast India and All India.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">Contact</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Terms of Service</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Categories</h4>
+                    <ul>
+                        <li><a href="#">Banking Jobs</a></li>
+                        <li><a href="#">Railway Jobs</a></li>
+                        <li><a href="#">Defense Jobs</a></li>
+                        <li><a href="#">Teaching Jobs</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Connect</h4>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 SarkariAlert. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Floating CTAs -->
+    <div class="floating-ctas">
+        <button class="floating-btn app-btn" onclick="showAppModal()">
+            <i class="fas fa-mobile-alt"></i>
+        </button>
+        <button class="floating-btn whatsapp-btn-float" onclick="joinWhatsApp()">
+            <i class="fab fa-whatsapp"></i>
+        </button>
+    </div>
+
+    <!-- Job Details Modal -->
+    <div class="modal" id="jobModal">
+        <div class="modal-content">
+            <span class="close-modal" onclick="closeModal()">&times;</span>
+            <div class="modal-header">
+                <i class="fas fa-lock"></i>
+                <h2>Full Details Locked</h2>
+            </div>
+            <div class="modal-body">
+                <div class="locked-items">
+                    <div class="locked-item">
+                        <i class="fas fa-user-check"></i>
+                        <span>Complete Eligibility Criteria</span>
+                    </div>
+                    <div class="locked-item">
+                        <i class="fas fa-rupee-sign"></i>
+                        <span>Salary Details & Benefits</span>
+                    </div>
+                    <div class="locked-item">
+                        <i class="fas fa-book"></i>
+                        <span>Syllabus & Exam Pattern</span>
+                    </div>
+                    <div class="locked-item">
+                        <i class="fas fa-calendar-alt"></i>
+                        <span>Age Limit & Relaxations</span>
+                    </div>
+                    <div class="locked-item">
+                        <i class="fas fa-clock"></i>
+                        <span>Important Dates</span>
+                    </div>
+                    <div class="locked-item">
+                        <i class="fas fa-link"></i>
+                        <span>Direct Apply Link</span>
+                    </div>
+                </div>
+                <p class="modal-text">Download the SarkariAlert app to view complete job details, eligibility, salary, syllabus, and apply directly!</p>
+                <button class="modal-download-btn" onclick="downloadApp()">
+                    <i class="fas fa-mobile-alt"></i> Download App to Continue
+                </button>
+                <button class="modal-whatsapp-btn" onclick="joinWhatsApp()">
+                    <i class="fab fa-whatsapp"></i> Join WhatsApp Group
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Load jobs data first -->
+    <script src="jobs-data.js"></script>
+    <!-- Then load main script -->
+    <script src="script.js"></script>
+</body>
+</html>
