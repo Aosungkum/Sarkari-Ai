@@ -1,4 +1,4 @@
-// Excel File Reader for SarkariAlert
+// Excel File Reader for Sarkari Ai
 // This script reads the uploaded Excel file and processes job data
 
 const fs = window.fs || require('fs');

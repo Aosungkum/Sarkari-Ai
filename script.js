@@ -646,7 +646,7 @@ function closeModal() {
 
 function downloadApp() {
     // In production, this would link to actual app stores
-    alert('🎉 Redirecting to App Store...\n\nDownload SarkariAlert app to:\n✓ View complete job details\n✓ Get instant notifications\n✓ Access unlimited MCQs\n✓ Join Northeast community');
+    alert('🎉 Redirecting to App Store...\n\nDownload Sarkari Ai app to:\n✓ View complete job details\n✓ Get instant notifications\n✓ Access unlimited MCQs\n✓ Join Northeast community');
     
     // Simulate app store redirect
     console.log('Redirecting to app store...');
@@ -764,7 +764,7 @@ document.querySelectorAll('button').forEach(button => {
     });
 });
 
-console.log('🎉 SarkariAlert initialized successfully!');
+console.log('🎉 Sarkari Ai initialized successfully!');
 console.log('📱 Total jobs loaded:', jobsData.all.length);
 console.log('🔍 Search & filter system active!');
 console.log('💡 Search Tips:');
