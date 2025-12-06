@@ -1,4 +1,4 @@
-# 🎯 SarkariAlert - Complete Setup Guide
+# 🎯 Sarkari Ai - Complete Setup Guide
 
 ## 📁 File Structure
 
@@ -93,7 +93,7 @@ Your Excel file should have these columns (column names are flexible):
 - 🔒 Important Dates - **LOCKED**
 - 🔒 Apply Link - **LOCKED**
 
-→ **Modal popup appears: "Download SarkariAlert App to view full details"**
+→ **Modal popup appears: "Download Sarkari Ai App to view full details"**
 
 ---
 

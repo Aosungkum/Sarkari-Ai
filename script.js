@@ -148,8 +148,8 @@ let currentFilters = {
 
 // Load Jobs into sections
 function loadJobs() {
-    // Load by sections initially
-    loadJobSection('featuredJobs', jobsData.all.filter(j => j.section === 'featured'));
+    // Load by sections initially - Show 6 featured jobs
+    loadJobSection('featuredJobs', jobsData.all.filter(j => j.section === 'featured' || j.tag === 'Hot').slice(0, 6));
     loadJobSection('northeastJobs', jobsData.all.filter(j => j.section === 'northeast').slice(0, 4));
     loadJobSection('allIndiaJobs', jobsData.all.filter(j => j.section === 'all-india').slice(0, 4));
     loadJobSection('closingSoonJobs', jobsData.all.filter(j => j.section === 'closing' || j.isUrgent));
@@ -257,21 +257,48 @@ function loadMCQs() {
     if (!mcqContainer) return;
 
     mcqContainer.innerHTML = mcqsData.map(mcq => createMCQCard(mcq)).join('');
+    
+    // Add click handlers for MCQ options
+    setupMCQHandlers();
 }
 
 function createMCQCard(mcq) {
     return `
-        <div class="mcq-card">
+        <div class="mcq-card" data-mcq-id="${mcq.id}">
             <div class="mcq-question">${mcq.question}</div>
             <div class="mcq-options">
                 ${mcq.options.map((option, index) => `
-                    <div class="mcq-option" data-mcq="${mcq.id}" data-option="${index}">
+                    <div class="mcq-option" data-mcq="${mcq.id}" data-option="${index}" data-correct="${mcq.correct}">
                         ${String.fromCharCode(65 + index)}. ${option}
                     </div>
                 `).join('')}
             </div>
         </div>
     `;
+}
+
+function setupMCQHandlers() {
+    document.querySelectorAll('.mcq-option').forEach(option => {
+        option.addEventListener('click', function() {
+            const mcqId = this.getAttribute('data-mcq');
+            const selectedOption = parseInt(this.getAttribute('data-option'));
+            const correctOption = parseInt(this.getAttribute('data-correct'));
+            
+            // Get all options for this MCQ
+            const allOptions = document.querySelectorAll(`.mcq-option[data-mcq="${mcqId}"]`);
+            
+            // Disable all options after selection
+            allOptions.forEach(opt => opt.classList.add('disabled'));
+            
+            // Show correct answer
+            allOptions[correctOption].classList.add('correct');
+            
+            // If wrong answer selected, show it as wrong
+            if (selectedOption !== correctOption) {
+                this.classList.add('wrong');
+            }
+        });
+    });
 }
 
 // Search Functionality
