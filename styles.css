@@ -266,6 +266,7 @@ body {
 }
 
 /* Stats Section */
+
 .stats-section {
     background: white;
     padding: 3rem 0;
@@ -278,6 +279,7 @@ body {
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     gap: 2rem;
 }
+
 
 .stat-card {
     text-align: center;
@@ -1080,4 +1082,176 @@ body {
         height: 50px;
         font-size: 1.2rem;
     }
+/* Make stats mobile friendly */
+@media (max-width: 768px) {
+
+    .stats-grid {
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 1rem;
+    }
+
+    .stat-card {
+        padding: 1rem !important;         /* smaller internal spacing */
+        border-radius: 12px !important;    /* smoother on mobile */
+    }
+
+    .stat-card i {
+        font-size: 1.5rem !important;      /* smaller icon */
+        margin-bottom: 0.3rem !important;
+    }
+
+    .stat-card h3 {
+        font-size: 1.3rem !important;      /* smaller number text */
+        margin-bottom: 0.2rem !important;
+    }
+
+    .stat-card p {
+        font-size: 0.8rem !important;
+    }
+}
+/* Mobile optimization for job card interior */
+@media (max-width: 768px) {
+
+    /* Smaller job card padding */
+    .job-card {
+        padding: 0.8rem !important;
+    }
+
+    /* Smaller title */
+    .job-title {
+        font-size: 0.9rem !important;
+        line-height: 1.2 !important;
+    }
+
+    /* Smaller organization text */
+    .job-card p {
+        font-size: 0.75rem !important;
+    }
+
+    /* Smaller meta (icons + text) */
+    .job-meta-item {
+        font-size: 0.7rem !important;
+        gap: 5px !important;
+    }
+
+    .job-meta-item i {
+        font-size: 0.8rem !important;
+    }
+
+    /* Make locked badge smaller */
+    .locked-badge {
+        font-size: 0.7rem !important;
+        gap: 3px !important;
+    }
+
+    /* Make the View Details button smaller */
+    .view-details-btn {
+        padding: 0.4rem 0.6rem !important;
+        font-size: 0.75rem !important;
+        border-radius: 6px !important;
+    }
+
+    /* Reduce spacing between footer elements */
+    .job-footer {
+        padding-top: 0.5rem !important;
+    }
+}
+/* Make job cards 2 per row on mobile */
+@media (max-width: 768px) {
+    .jobs-grid {
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 1rem !important;
+    }
+
+    .job-card {
+        padding: 1rem !important;
+    }
+
+    .job-title {
+        font-size: 0.95rem !important;
+    }
+
+    .job-meta-item {
+        font-size: 0.75rem !important;
+    }
+
+    .job-card i {
+        font-size: 0.9rem !important;
+    }
+}
+/* Make job titles mobile-friendly */
+@media (max-width: 768px) {
+
+    .job-title {
+        font-size: 0.82rem !important;     /* smaller title */
+        font-weight: 600 !important;       /* slight reduction improves readability */
+        line-height: 1.15 !important;      /* compact line spacing */
+        max-height: 2.3rem;                /* prevent tall wrapping */
+        overflow: hidden;                  /* hide overflow */
+        display: -webkit-box;
+        -webkit-line-clamp: 2;             /* limit to 2 lines */
+        -webkit-box-orient: vertical;
+    }
+}
+/* Mobile-friendly MCQs */
+@media (max-width: 768px) {
+
+    .mcq-card {
+        padding: 1rem !important;
+        border-radius: 10px !important;
+    }
+
+    .mcq-question {
+        font-size: 0.95rem !important;
+        margin-bottom: 0.8rem !important;
+        line-height: 1.3 !important;
+    }
+
+    .mcq-option {
+        padding: 0.7rem !important;
+        font-size: 0.85rem !important;
+        border-radius: 8px !important;
+    }
+
+    .mcq-options {
+        gap: 0.6rem !important;
+    }
+
+    .mcq-cta {
+        padding: 1.2rem !important;
+        font-size: 0.9rem !important;
+    }
+}
+/* Mobile-friendly Current Affairs */
+@media (max-width: 768px) {
+
+    .current-affairs-grid {
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 1rem !important;
+    }
+
+    .affair-card {
+        padding: 1rem !important;
+        border-radius: 10px !important;
+    }
+
+    .affair-card p {
+        font-size: 0.85rem !important;
+        line-height: 1.25 !important;
+    }
+
+    .affair-tag {
+        font-size: 0.7rem !important;
+        padding: 0.25rem 0.6rem !important;
+    }
+}
+
+/* Tiny screens (older small phones) */
+@media (max-width: 430px) {
+    .current-affairs-grid {
+        grid-template-columns: 1fr !important;
+    }
+}
+
+
 }
