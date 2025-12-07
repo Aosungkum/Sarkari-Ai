@@ -404,9 +404,9 @@ function showSearchResults(query) {
         searchIndicator.style.cssText = `
             background: linear-gradient(135deg, #6366f1 0%, #4f46e5 100%);
             color: white;
-            padding: 1rem 2rem;
+            padding: 1rem 1rem;
             text-align: center;
-            font-weight: 600;
+            font-weight: 300;
             position: sticky;
             top: 70px;
             z-index: 999;
@@ -603,10 +603,9 @@ function showFilterIndicator() {
             indicator.style.cssText = `
                 background: linear-gradient(135deg, var(--secondary) 0%, #059669 100%);
                 color: white;
-                padding: 1rem 2rem;
+                padding: 1rem 1rem;
                 text-align: center;
-                font-weight: 600;
-                position: sticky;
+                font-weight: 300;
                 top: 70px;
                 z-index: 999;
                 box-shadow: 0 5px 15px rgba(0,0,0,0.2);
@@ -680,12 +679,9 @@ function downloadApp() {
 }
 
 function joinWhatsApp() {
-    // In production, this would open WhatsApp group link
-    alert('📱 Join our WhatsApp Group!\n\nGet instant job alerts and connect with thousands of aspirants from Northeast India.\n\nGroup benefits:\n✓ Fastest job updates\n✓ Exam tips & tricks\n✓ Study materials\n✓ Community support');
-    
-    // Simulate WhatsApp redirect
-    console.log('Opening WhatsApp group...');
+    window.open("https://whatsapp.com/channel/0029VbBUDWZLtOj7bNUn3V0g", "_blank");
 }
+
 
 // Close modal when clicking outside
 window.addEventListener('click', function(e) {
