@@ -1,3 +1,42 @@
+/* ===========================
+      COOKIE HELPERS
+=========================== */
+
+// Save cookie
+function setCookie(name, value, days = 30) {
+    const expires = new Date(Date.now() + days * 864e5).toUTCString();
+    document.cookie = `${name}=${encodeURIComponent(value)}; expires=${expires}; path=/`;
+}
+
+// Read cookie
+function getCookie(name) {
+    return document.cookie.split("; ").reduce((result, cookie) => {
+        const parts = cookie.split("=");
+        return parts[0] === name ? decodeURIComponent(parts[1]) : result;
+    }, "");
+}
+
+// Delete cookie
+function deleteCookie(name) {
+    document.cookie = `${name}=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;`;
+}
+
+/* ===========================
+   AUTO-LOAD & AUTO-SAVE SEARCH
+=========================== */
+
+// After DOM loaded, restore last search (if cookie exists)
+document.addEventListener("DOMContentLoaded", () => {
+    const searchInput = document.getElementById("searchInput");
+    const last = getCookie("lastSearch");
+
+    if (last && searchInput) {
+        searchInput.value = last;      
+        console.log("🔄 Restored last search:", last);
+    }
+});
+
+
 // Load jobs from external data file
 let jobsData = { all: [] };
 
@@ -376,6 +415,9 @@ function performSearch(query) {
     currentFilters.searchQuery = query.toLowerCase().trim();
     applyAllFilters();
     
+    setCookie("lastSearch", query, 7);  // Save last search for 7 days
+
+
     // Show search results indicator
     showSearchResults(query);
     
